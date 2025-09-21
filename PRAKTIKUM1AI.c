@@ -3,25 +3,25 @@
 
 #define MAX 50
 
-// Struktur Node untuk Queue
+/* Struktur Node untuk Queue
 typedef struct {
     int items[MAX];
     int front;
     int rear;
 } Queue;
 
-// Inisialisasi Queue kosong
+/* Inisialisasi Queue kosong
 void initQueue(Queue *q) {
     q->front = -1;
     q->rear = -1;
 }
 
-// Cek apakah Queue kosong
+/* Cek apakah Queue kosong
 int isEmpty(Queue *q) {
     return q->rear == -1;
 }
 
-// Enqueue
+/* Enqueue
 void enqueue(Queue *q, int value) {
     if (q->rear == MAX-1) {
         printf("Queue penuh!\n");
@@ -32,7 +32,7 @@ void enqueue(Queue *q, int value) {
     q->items[q->rear] = value;
 }
 
-// Dequeue
+/* Dequeue
 int dequeue(Queue *q) {
     int item;
     if (isEmpty(q)) {
@@ -47,12 +47,12 @@ int dequeue(Queue *q) {
     return item;
 }
 
-// Graph menggunakan adjacency list
-int adj[MAX][MAX];   // adjacency matrix
+/* Graph menggunakan adjacency list
+int adj[MAX][MAX];   /* adjacency matrix
 int visited[MAX];
-int n;               // jumlah node
+int n;               /* jumlah node
 
-// Fungsi utama BFS
+/* Fungsi utama BFS
 void bfs(int startNode) {
     Queue q;
     initQueue(&q);
@@ -73,11 +73,11 @@ void bfs(int startNode) {
     }
 }
 
-// Menentukan jumlah node
+/* Menentukan jumlah node
 int main() {
-    n = 8; // jumlah node = 8
+    n = 8; /* jumlah node = 8
 
-    // inisialisasi adjacency matrix
+    /* inisialisasi adjacency matrix
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= n; j++) {
             adj[i][j] = 0;
@@ -85,7 +85,7 @@ int main() {
         visited[i] = 0;
     }
 
-    // Tambah edge sesuai tree di modul
+    /* Tambah edge sesuai tree di modul
     adj[1][2] = adj[2][1] = 1;
     adj[1][5] = adj[5][1] = 1;
     adj[2][3] = adj[3][2] = 1;
